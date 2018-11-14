@@ -13,8 +13,15 @@
                 <p>{!! nl2br(e($micropost->content)) !!}</p>
             </div>
             <div>
+                @if (session('s3url'))
+                    <img src="{{ session('s3url') }}">
+                @endif
+            </div>
+            
+            <div>
                 @include('favorite.favorite_button', ['microposts' => $micropost])
             </div>
+            
             <div>
                 @if (Auth::id() == $micropost->user_id)
                     {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}

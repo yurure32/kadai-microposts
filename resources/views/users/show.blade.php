@@ -27,6 +27,20 @@
                           {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
                       </div>
                   {!! Form::close() !!}
+                  
+                  <!--{!! Form::open(['url' => '/upload', 'method' => 'post', 'class' => 'form', 'files' => true]) !!}-->
+
+                  <!--    <div class="form-group">-->
+                  <!--        {!! Form::label('myfile', 'Upload a file') !!}-->
+                  <!--        {!! Form::file('myfile', null) !!}-->
+                  <!--    </div>-->
+                    
+                  <!--    <div class="form-group">-->
+                  <!--        {!! Form::submit('Upload') !!}-->
+                  <!--    </div>-->
+
+                  <!--{!! Form::close() !!}-->
+                  
             @endif
             @if (count($microposts) > 0)
                 @include('microposts.microposts', ['microposts' => $microposts])
