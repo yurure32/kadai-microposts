@@ -89,11 +89,13 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            's3url' => 'nullable',
             'name' => 'required|srting|max:255',
         ]);
         
         $user = User::find($id);
-        $user->name=$request->name;
+        $user->s3url = $request->s3url;
+        $user->name = $request->name;
         $user->save();
         
         return redirect('/');
